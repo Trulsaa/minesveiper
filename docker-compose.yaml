@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  dev:
+    build: .
+    container_name: minesveiper
+    tty: true
+    image: minesveiper
+    volumes:
+      - .:/usr/src/app:delegated
+      - /usr/src/app/node_modules/
+    ports:
+      - 3000:3000
+      - 8080:8080
+      - 6006:6006
+    command: sh
